@@ -2,7 +2,8 @@
 <suite name="CucumberTestNGSuite">
   <test name="Run Cucumber Features">
     <classes>
-      <class name="Runner" />
+      <class name="TestRunner.Yatra"/>
     </classes>
   </test>
 </suite>
+
