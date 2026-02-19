@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class Yatra {
+public class YatraTest {
 	
 	@Test
 	public void demo() throws InterruptedException {
@@ -39,6 +39,7 @@ WebDriver driver = new ChromeDriver(options);
 	}
 
 }
+
 
 
 
