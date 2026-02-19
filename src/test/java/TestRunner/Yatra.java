@@ -20,15 +20,15 @@ public class Yatra {
 	public void demo() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--start-maximized");
+		options.addArguments("--headless=new");
+options.addArguments("--no-sandbox");
+options.addArguments("--disable-dev-shm-usage");
 		
 		Map<String, Object> prefs = new HashMap<>();
 		prefs.put("profile.default_content_setting_values.notifications", 2); // 1=allow, 2=block
 		options.setExperimentalOption("prefs", prefs);
 
-		ChromeOptions options = new ChromeOptions();
-options.addArguments("--headless=new");
-options.addArguments("--no-sandbox");
-options.addArguments("--disable-dev-shm-usage");
+
 
 WebDriver driver = new ChromeDriver(options);
 
@@ -49,4 +49,5 @@ WebDriver driver = new ChromeDriver(options);
 	}
 
 }
+
 
