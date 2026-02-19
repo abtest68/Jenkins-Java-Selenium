@@ -19,18 +19,17 @@ public class Yatra {
 	@Test
 	public void demo() throws InterruptedException {
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--start-maximized");
-		options.addArguments("--headless=new");
+options.addArguments("--headless=new");
 options.addArguments("--no-sandbox");
 options.addArguments("--disable-dev-shm-usage");
+options.addArguments("--remote-allow-origins=*");
+
+WebDriver driver = new ChromeDriver(options);
+
 		
 		Map<String, Object> prefs = new HashMap<>();
 		prefs.put("profile.default_content_setting_values.notifications", 2); // 1=allow, 2=block
 		options.setExperimentalOption("prefs", prefs);
-
-
-
-WebDriver driver = new ChromeDriver(options);
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		driver.get("https://www.yatra.com/");
@@ -49,5 +48,6 @@ WebDriver driver = new ChromeDriver(options);
 	}
 
 }
+
 
 
