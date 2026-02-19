@@ -33,21 +33,13 @@ WebDriver driver = new ChromeDriver(options);
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		driver.get("https://www.yatra.com/");
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("document.body.style.zoom='90%'");
 		
-		By crossButton = By
-				.xpath("//img[@alt=\"cross\"]");
-		WebElement crossButton1 = wait.until(ExpectedConditions.visibilityOfElementLocated(crossButton));
-//		WebElement sourceButton = driver.findElement(sourceButtonLocator);
-		crossButton1.click();
-		
-		Thread.sleep(4000);
 		
 		
 	}
 
 }
+
 
 
 
