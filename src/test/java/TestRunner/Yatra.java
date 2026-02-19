@@ -25,7 +25,13 @@ public class Yatra {
 		prefs.put("profile.default_content_setting_values.notifications", 2); // 1=allow, 2=block
 		options.setExperimentalOption("prefs", prefs);
 
-		WebDriver driver = new ChromeDriver(options);
+		ChromeOptions options = new ChromeOptions();
+options.addArguments("--headless=new");
+options.addArguments("--no-sandbox");
+options.addArguments("--disable-dev-shm-usage");
+
+WebDriver driver = new ChromeDriver(options);
+
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		driver.get("https://www.yatra.com/");
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -43,3 +49,4 @@ public class Yatra {
 	}
 
 }
+
